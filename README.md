@@ -5,16 +5,20 @@
 
 <h1 align="center">Devalaran</h1>
 <h3 align="center">Devaralan is a root domain permutation tool that generates root domain variations by adding prefixes and suffixes using predefined keywords.</h3>
-<p align="center"><img src=https://github-production-user-asset-6210df.s3.amazonaws.com/85845881/374696043-17cc83ce-e123-4a49-a75f-15a69a1db5d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241008%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241008T192939Z&X-Amz-Expires=300&X-Amz-Signature=57bed9c4a6ea7a3160ee514b0272877bf890edefabb2ca1d85d58051dbdef8de&X-Amz-SignedHeaders=host></p>
+<p align="center"><img src=https://i.ibb.co/VgctZZY/Screenshot-2024-10-11-at-3-43-42-PM.png></p>
 
 # Tree
 - [Summary](#Summary)
+- [System Requirements](#System%20Requirements)
 - [Seed](#Seed)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
+- [Troubleshooting & Common Issues](#Troubleshooting%20%26%20Common%20Issues)
 - [Contribution](#contribution)
 - [Author](#author)
+- [Warning](#warning)
+- [License](#license)
 
 # Summary
 
@@ -151,9 +155,12 @@ Make your changes and test thoroughly.
 Submit a pull request detailing your changes.
 ```
 
+# Author
+- Krishna Agarwal (kr1shna4garwal@proton.me)
+
 # Warning 
 
 IMPORTANT: Use this tool responsibly and only on domains you have explicit permission to test. Unauthorized use against domains without consent could be illegal and result in severe consequences. Follow the laws of your jurisdiction and adhere to ethical hacking guidelines.
 
-License
+# License
 This project is licensed under the GPL-3.0 License. See the LICENSE file for details.
