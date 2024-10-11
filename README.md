@@ -24,7 +24,9 @@
 
 **Devaralan** is an advanced root domain permutation generator and DNS resolver tool built in Python, I created this for my personal bug bounty activities. This tool helps you automate the generation of root domain permutations (example: apple-internal[.]com) and then check if they resolve to valid IPs.
 It generates domains based on a combination of known keywords (you can add your keywords too) and existing subdomains.
-The tool can also perform DNS resolution, HTTP status code checks, and WHOIS lookups, giving you detailed information about the discovered subdomains.
+The tool can also perform DNS resolution, HTTP status code checks, and WHOIS lookups, giving you detailed information about the discovered domains.
+
+PLEASE NOTE THAT THIS TOOL WILL NOT VALIDATE IF THE DISCOVERED DOMAIN IS ACTUALLY OWNED BY THE TARGET, YOU HAVE TO MANUALLY VERIFY IT!
 
 # System Requirements
 - Python 3.10 or later
