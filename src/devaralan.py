@@ -12,12 +12,10 @@ import logging
 from typing import List, Optional
 from dataclasses import dataclass, asdict
 from colorama import Fore, Style, init
-from tqdm import tqdm
 import json
 import csv
-import random
-import time
 from fake_useragent import UserAgent
+
 
 init(autoreset=True)
 
