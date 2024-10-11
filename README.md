@@ -9,12 +9,12 @@
 
 # Tree
 - [Summary](#Summary)
-- [System Requirements](#System%20Requirements)
+- [System Requirements](#System-Requirements)
 - [Seed](#Seed)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
-- [Troubleshooting & Common Issues](#Troubleshooting & Common Issues)
+- [Troubleshooting & Common Issues](#Troubleshooting--Common-Issues)
 - [Contributing](#Contributing)
 - [Author](#author)
 - [Warning](#warning)
