@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.11
 
 # > Name: Devaralan
+# > Author: Krishna Agarwal (kr1shna4garwal)
 # > Version: 1.0
 # > Url: https://github.com/kr1shna4garwal/devaralan
 
