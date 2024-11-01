@@ -3,6 +3,7 @@ name: Build Python Binaries
 on:
   release:
     types: [published]
+  push: # This will trigger the workflow on every push to any branch
 
 jobs:
   build-linux-amd64:
@@ -28,6 +29,7 @@ jobs:
           zip devaralan_linux_amd64.zip dist/devaralan
 
       - name: Upload binaries to release
+        if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -59,6 +61,7 @@ jobs:
           zip devaralan_linux_arm64.zip dist/devaralan
 
       - name: Upload binaries to release
+        if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -90,6 +93,7 @@ jobs:
           zip devaralan_darwin_arm64.zip dist/devaralan
 
       - name: Upload binaries to release
+        if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
