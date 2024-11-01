@@ -1,0 +1,99 @@
+name: Build Python Binaries
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-linux-amd64:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install package and dependencies
+        run: |
+          pip install .
+          pip install pyinstaller
+
+      - name: Build for Linux amd64
+        run: |
+          cd cmd/devaralan
+          pyinstaller --onefile --name devaralan devaralan.py
+          zip devaralan_linux_amd64.zip dist/devaralan
+
+      - name: Upload binaries to release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}  
+          files: |
+            ${{github.workspace}}/cmd/devaralan/devaralan_linux_amd64.zip
+
+  build-linux-arm64:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install package and dependencies
+        run: |
+          pip install .
+          pip install pyinstaller
+
+      - name: Build for Linux arm64
+        run: |
+          cd cmd/devaralan
+          pyinstaller --onefile --name devaralan devaralan.py
+          zip devaralan_linux_arm64.zip dist/devaralan
+
+      - name: Upload binaries to release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}  
+          files: |
+            ${{github.workspace}}/cmd/devaralan/devaralan_linux_arm64.zip
+
+  build-macos-arm64:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install package and dependencies
+        run: |
+          pip install .
+          pip install pyinstaller
+
+      - name: Build for macOS arm64
+        run: |
+          cd cmd/devaralan
+          pyinstaller --onefile --name devaralan devaralan.py
+          zip devaralan_darwin_arm64.zip dist/devaralan
+
+      - name: Upload binaries to release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}  
+          files: |
+            ${{github.workspace}}/cmd/devaralan/devaralan_darwin_arm64.zip
