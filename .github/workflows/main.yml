@@ -3,7 +3,7 @@ name: Build Python Binaries
 on:
   release:
     types: [published]
-  push: # This will trigger the workflow on every push to any branch
+  push: # Trigger the workflow on every push
 
 jobs:
   build-linux-amd64:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Build for Linux amd64
         run: |
-          cd cmd/devaralan
+          cd src
           pyinstaller --onefile --name devaralan devaralan.py
           zip devaralan_linux_amd64.zip dist/devaralan
 
@@ -36,7 +36,7 @@ jobs:
         with:
           tag_name: ${{ github.event.release.tag_name }}  
           files: |
-            ${{github.workspace}}/cmd/devaralan/devaralan_linux_amd64.zip
+            ${{github.workspace}}/src/devaralan_linux_amd64.zip
 
   build-linux-arm64:
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
 
       - name: Build for Linux arm64
         run: |
-          cd cmd/devaralan
+          cd src
           pyinstaller --onefile --name devaralan devaralan.py
           zip devaralan_linux_arm64.zip dist/devaralan
 
@@ -68,7 +68,7 @@ jobs:
         with:
           tag_name: ${{ github.event.release.tag_name }}  
           files: |
-            ${{github.workspace}}/cmd/devaralan/devaralan_linux_arm64.zip
+            ${{github.workspace}}/src/devaralan_linux_arm64.zip
 
   build-macos-arm64:
     runs-on: macos-latest
@@ -88,7 +88,7 @@ jobs:
 
       - name: Build for macOS arm64
         run: |
-          cd cmd/devaralan
+          cd src
           pyinstaller --onefile --name devaralan devaralan.py
           zip devaralan_darwin_arm64.zip dist/devaralan
 
@@ -100,4 +100,4 @@ jobs:
         with:
           tag_name: ${{ github.event.release.tag_name }}  
           files: |
-            ${{github.workspace}}/cmd/devaralan/devaralan_darwin_arm64.zip
+            ${{github.workspace}}/src/devaralan_darwin_arm64.zip
